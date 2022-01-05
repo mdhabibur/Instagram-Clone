@@ -22,12 +22,14 @@ import java.util.List;
 public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     //github personal access token: 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
+    //github third personal access token: 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
 
     private Button btnSave;
     private EditText edtName, edtPunchSpeed, edtPunchPower, edtKickSpeed, edtKickPower;
     private TextView txtGetData;
 
     private Button btnGetAllData;
+    private Button btnTransition;
 
 
     private String allKickBoxers;
@@ -75,6 +77,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
 
 
+
         btnGetAllData = findViewById(R.id.btnGetAllData);
         btnGetAllData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +89,11 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 ParseQuery<ParseObject> queryAll = ParseQuery.getQuery("KickBoxer");
                 //if you want to fetch one object at a time in background use getInBackground() method but
                 //if you want all the objects of a class in background use findInBackground() method
+
+//                queryAll.whereGreaterThan("punchPower", 300);
+                queryAll.whereGreaterThanOrEqualTo("punchPower",222);
+                queryAll.setLimit(2); //setLimit(1) it will give only one object
+
                 queryAll.findInBackground(new FindCallback<ParseObject>() {
                     @Override
                     public void done(List<ParseObject> objects, ParseException e) {
@@ -109,6 +117,15 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
                     }
                 });
+            }
+        });
+
+
+        btnTransition = findViewById(R.id.btnNextActivity);
+        btnTransition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 
