@@ -14,7 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InstagramClone">
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".SocialMediaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".SignUp"
@@ -25,7 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpLoginActivity" />
 
         <meta-data
             android:name="com.parse.SERVER_URL"
