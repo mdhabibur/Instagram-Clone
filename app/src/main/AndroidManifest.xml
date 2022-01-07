@@ -15,7 +15,9 @@
         android:theme="@style/Theme.InstagramClone">
         <activity
             android:name=".SocialMediaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.InstagramClone.NoActionBar"
+            />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
