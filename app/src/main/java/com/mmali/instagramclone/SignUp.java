@@ -1,7 +1,5 @@
 package com.mmali.instagramclone;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +8,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -20,7 +20,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     //github personal access token: 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
     //github third personal access token: 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
-    //fourch pat :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
+    //fourth pat :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
     //why tokes is expiring after few commits?
 
     //Ui components
@@ -164,6 +164,13 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
         Intent intent = new Intent(SignUp.this, SocialMediaActivity.class);
         startActivity(intent);
+        finish();
+        //we need to finish the activity as soon as the user is transferred to dashboard because we don't want the user to go back again
+        //to the signup interface when the user presses back button . it is a very important feature to app.
+        //user's must not be taken to sign up or login activity when they press back button or want to leave the app.
+        //only take them to signup or login interface at the first time or when they click to logout button
+
+        //by calling finish() method we clear out the instance of that activity from the stack
     }
 
 

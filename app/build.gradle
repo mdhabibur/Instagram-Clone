@@ -39,4 +39,7 @@ dependencies {
     implementation "com.github.parse-community.Parse-SDK-Android:parse:3.0.0"
     //Fancy Toast
     implementation 'io.github.shashank02051997:FancyToast:2.0.1'
+    //pretty dialog library
+    implementation 'com.github.mjn1369:prettydialog:1.0.4'
+
 }
